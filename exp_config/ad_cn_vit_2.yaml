@@ -1,0 +1,28 @@
+name_exp: 'AD vs CD ViT'
+result_path: './results/ad_cd_vit_2/'
+image_size: 64
+global_params:
+    device: 'cuda:0'
+model_params: 
+    model_name: 'ViT'
+    in_channels: 1
+    img_size: 64
+    patch_size: 8
+    num_layers: 3
+    num_heads: 8
+    hidden_size: 64
+    pos_embed: 'conv'
+    qkv_bias: True
+    classification: True
+    num_classes: 1
+    spatial_dims: 3
+    post_activation: 'Sigmoid'
+training_params: 
+    lr: 0.005
+    count_folds_splits: 10
+    use_checkpoint: False
+    verbose_make_dataset: True
+    verbose_train: True
+    thr_metirc: 0.5
+    batch_size: 4
+    epoch_num: 5
